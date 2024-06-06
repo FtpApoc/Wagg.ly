@@ -1,0 +1,23 @@
+<html lang = "en">
+    <%- include('./partials/header.ejs') %>
+
+    <body>
+    <%- include('./partials/nav.ejs') %>
+
+        <div class="Dog-Registration Content">
+            <h2>Dog Registration Form</h2>
+            <form action="/dog" method="POST"> 
+                <label for="dogName"> Dog Name: </label>
+                <input type="text" id="dogName" name="name" required>
+
+                <label for="dogBreed"> Dog Breed: </label>
+                <input type="text" id="dogBreed" name="breed" required>
+
+                <label for="dogLocation"> Dog Location: </label>
+                <input type="text" id="dogLocation" name="location" required>
+
+                <button class="button">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<html lang = "en">
+    <%- include('./partials/header.ejs') %>
+
+    <body>
+        
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="dog list">
+            <h2>Dogs Listed</h2>
+            <% if(dogList.length > 0){ %>
+                <% dogList.forEach(dog => { %>
+                <div id="DogDiv">
+                    <h3 class="dogNameLabel"> <%= dog.name %> </h3>
+                    <a class="dogBreed"> <%= dog.breed %> </a>
+                    <br>
+                    <a class="dogLocation"> <%= dog.location %> </a>
+                </div>
+                <% }) %>  
+            <% } else { %>
+                    <p> There are no Dogs listed in the database</p>
+                <% } %>
+        </div>
+    </body>
+</html>
