@@ -5,11 +5,11 @@
         
         <%- include('./partials/nav.ejs') %>
 
-        <div class="dog list">
+        <div class="Data list">
             <h2>Dogs Listed</h2>
             <% if(dogList.length > 0){ %>
                 <% dogList.forEach(dog => { %>
-                <div id="DogDiv">
+                <div id="DataDiv">
                     <h3 class="dogNameLabel"> <%= dog.name %> </h3>
                     <a class="dogBreed"> <%= dog.breed %> </a>
                     <br>

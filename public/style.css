@@ -51,7 +51,7 @@ h3{
 }
 
 /* index styles */
-#DogDiv{
+#DataDiv{
     display: block;
     margin: 40px 0;
     padding-left: 30px;
@@ -60,18 +60,18 @@ h3{
 /* details styles */
 
 /* create styles */
-.dog-registration form{
+.registration form{
   max-width: 400px;
   margin: 0 auto;
 }
-.dog-registration input,
-.dog-registration textarea{
+.registration input,
+.registration textarea{
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 8px;
 }
-.dog-registration label{
+.registration label{
   display: block;
   margin-top: 24px;
   color: #ffffff;
@@ -79,7 +79,7 @@ h3{
 textarea{
   height: 120px;
 }
-.dog-registration button{
+.registration button{
   margin-top: 20px;
   background: crimson;
   color: white;

@@ -1,0 +1,20 @@
+<html lang = "en">
+    <%- include('./partials/header.ejs') %>
+
+    <body>
+    <%- include('./partials/nav.ejs') %>
+
+        <div class="Registration Content">
+            <h2>Walker Registration Form</h2>
+            <form action="/walker" method="POST"> 
+                <label for="walkerName"> Walker Name: </label>
+                <input type="text" id="walkerName" name="name" required>
+
+                <label for="walkerLocation"> Location: </label>
+                <input type="text" id="walkerLocation" name="location" required>
+
+                <button class="button">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

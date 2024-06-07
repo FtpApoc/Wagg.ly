@@ -2,11 +2,21 @@
     <%- include('./partials/header.ejs') %>
 
     <body>
+        
         <%- include('./partials/nav.ejs') %>
 
-        <div class="Walker list">
+        <div class="Data list">
             <h2>Dog Walkers Listed</h2>
-
+            <% if(walkerList.length > 0){ %>
+                <% walkerList.forEach(walker => { %>
+                <div id="DataDiv">
+                    <h3 class="walkerNameLabel"> <%= walker.name %> </h3>
+                    <a class="walkerLocation"> <%= walker.location %> </a>
+                </div>
+                <% }) %>  
+            <% } else { %>
+                    <p> There are no Walkers listed in the database</p>
+                <% } %>
         </div>
     </body>
 </html>

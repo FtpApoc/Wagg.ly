@@ -1,11 +1,12 @@
 const express = require('express');
-const dogRouter = require('./routes/dogRouter')
 const mongoose = require('mongoose');
 
-app.listen(8080)
+const dogRouter = require('./routes/dogRouter')
+const walkerRouter = require('./routes/walkerRouter')
 
 const app = express();
 app.set('view engine', 'ejs');
+app.listen(8080);
 
 //set for use of stylesheets and images
 app.use(express.static("public")); 
@@ -22,34 +23,41 @@ mongoose.connect(dbConnection).then((result) => {
 });
 
 
-app.use('/dog', dogRouter);
-
-
-
 app.get('/',(req, res) => {
 
     res.sendFile('./views/homePage.html', { root: __dirname});
 
 });
 
-
+app.use('/dog', dogRouter);
 
 app.get('/dogAdd',(req,res) => {
     
     res.render('DogAdd',{
-        pageTitle:'DogsAdd'
+        pageTitle:'Dog Registration'
     });
     
 })
 
-app.get('/walker',(req, res) => {
+app.use('/walker', walkerRouter);
+// app.get('/walker',(req, res) => {
 
-    res.render('walker',{
-        pageTitle:'Walker'
-    });
+//     res.render('walker',{
+//         pageTitle:'Walker'
+//     });
  
-});
+// });
 
+app.get('/walkerAdd',(req,res) => {
+    
+    res.render('WalkerAdd',{
+        pageTitle:'Walker Registration'
+    });
+    
+})
+
+
+//Else Condition catching 404 errors
 app.use((req,res) => {
     res.status(404).render('404');
 })
