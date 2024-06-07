@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 body{
   max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  font-family: 'Noto Serif', serif;
+  margin: 0 auto;
+  padding: 0 max;
+  font-family: 'Rubik', sans-serif;
   max-width: 1200px;
   background: #2b2b2b;
+
 }
 p, h1, h2, h3, a, ul{
   margin: 0;
@@ -18,10 +22,13 @@ p, h1, h2, h3, a, ul{
 nav{
   display: flex;
   justify-content: space-between;
+  padding: 0 10px;
   margin-bottom: 60px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   text-transform: uppercase;
+  background: #CC5500;
+  margin: 20px 0px;
 }
 nav ul{
   display: flex;
@@ -55,7 +62,7 @@ h3{
     display: block;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 6px solid crimson;
+    border-left: 6px solid #CC5500;
 }
 /* details styles */
 
@@ -81,7 +88,7 @@ textarea{
 }
 .registration button{
   margin-top: 20px;
-  background: crimson;
+  background: #CC5500;
   color: white;
   padding: 6px;
   border: 0;
