@@ -2,6 +2,7 @@ const express = require('express');
 const dogRouter = require('./routes/dogRouter')
 const mongoose = require('mongoose');
 
+app.listen(8080)
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -15,7 +16,6 @@ app.use(express.urlencoded({extended: true}));
 const dbConnection = "mongodb+srv://user:password1234@wagglydb.y5azkgd.mongodb.net/WagglyDB?retryWrites=true&w=majority&appName=WagglyDB"
 
 mongoose.connect(dbConnection).then((result) => {
-    app.listen(8080)
     console.log("DB Connected")
 }).catch((err) => {
     console.log(err)
