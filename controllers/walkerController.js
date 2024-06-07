@@ -1,9 +1,12 @@
+//import walkerDB using { } so walker.walkerDB not necessary 
 const { walkerDB } = require('../model/walker');
 
+//functionality test to demonstrate ability to chain middleware
 const consoleTest = (req,res,next) => {
     console.log("test")
     next()
 }
+
 
 const getWalkers = (req,res) => {
     walkerDB.find().then((result) => {
@@ -14,6 +17,7 @@ const getWalkers = (req,res) => {
     });
 }
 
+//bound to page load, displays dog list by pulling from database
 const showPage = (req, res) => {
 
     walkerDB.find().then((result) =>{
@@ -29,6 +33,7 @@ const showPage = (req, res) => {
     })
 }
 
+//POST request applied to /walker, which then redirects to there to show change
 const addWalker =  (req,res) => {
     const walker = new walkerDB(req.body)
 
@@ -41,6 +46,7 @@ const addWalker =  (req,res) => {
     
 }
 
+//imported by router
 module.exports = {
     getWalkers,
     consoleTest,

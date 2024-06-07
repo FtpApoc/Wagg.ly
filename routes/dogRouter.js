@@ -1,9 +1,9 @@
+//Similar to walkerRouter, Seperate to allow decoupled development and scaling
 const express = require('express');
 const dogController = require('../controllers/dogController');
 
 const router = express.Router();
 
-//Retrieve Dogs
 router.get('/get', dogController.consoleTest, dogController.getDogs);
 
 router.get('/', dogController.showPage);

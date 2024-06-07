@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+//establishing routers for dog and walkers
 const dogRouter = require('./routes/dogRouter')
 const walkerRouter = require('./routes/walkerRouter')
 
@@ -11,18 +12,20 @@ app.listen(8080);
 //set for use of stylesheets and images
 app.use(express.static("public")); 
 
-//used to accept form data
+//used to accept form data in better format
 app.use(express.urlencoded({extended: true}));
 
+//atlas Hosted MongoDB deployment
 const dbConnection = "mongodb+srv://user:password1234@wagglydb.y5azkgd.mongodb.net/WagglyDB?retryWrites=true&w=majority&appName=WagglyDB"
 
+//async connection to database
 mongoose.connect(dbConnection).then((result) => {
     console.log("DB Connected")
 }).catch((err) => {
     console.log(err)
 });
 
-
+//Home Page
 app.get('/',(req,res) => {
     
     res.render('homePage',{
@@ -31,6 +34,7 @@ app.get('/',(req,res) => {
     
 })
 
+//binding of router discussed on line 5
 app.use('/dog', dogRouter);
 
 app.get('/dogAdd',(req,res) => {
@@ -41,14 +45,8 @@ app.get('/dogAdd',(req,res) => {
     
 })
 
+// see line 6
 app.use('/walker', walkerRouter);
-// app.get('/walker',(req, res) => {
-
-//     res.render('walker',{
-//         pageTitle:'Walker'
-//     });
- 
-// });
 
 app.get('/walkerAdd',(req,res) => {
     

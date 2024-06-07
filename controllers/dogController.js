@@ -1,3 +1,4 @@
+//Similar to walkerRouter, Seperate to allow decoupled development and scaling
 const { dogDB } = require('../model/dog');
 
 const consoleTest = (req,res,next) => {

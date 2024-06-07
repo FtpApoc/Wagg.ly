@@ -1,6 +1,8 @@
+//requiring of mongoose and a schema to map to NoSQL results
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//data expected from MongoDB 'walkers' collection
 const walkerSchema = new Schema({
     name: String,
     location: String

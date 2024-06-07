@@ -1,3 +1,4 @@
+//Similar to walker model, Seperate to allow decoupled development and scaling
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
