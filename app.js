@@ -61,5 +61,5 @@ app.get('/walkerAdd',(req,res) => {
 
 //Else Condition catching 404 errors
 app.use((req,res) => {
-    res.status(404).render('404');
+    res.status(404).render('404',{pageTitle:'404'});
 })
