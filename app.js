@@ -23,11 +23,13 @@ mongoose.connect(dbConnection).then((result) => {
 });
 
 
-app.get('/',(req, res) => {
-
-    res.sendFile('./views/homePage.html', { root: __dirname});
-
-});
+app.get('/',(req,res) => {
+    
+    res.render('homePage',{
+        pageTitle:'Home'
+    });
+    
+})
 
 app.use('/dog', dogRouter);
 
